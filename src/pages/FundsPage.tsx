@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../components/ui/accordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { ROICalculator } from "../components/ROICalculator";
 
 interface FundsPageProps {
@@ -19,8 +20,7 @@ interface FundsPageProps {
 
 export function FundsPage({ language, setCurrentPage }: FundsPageProps) {
   const t = translations[language].funds;
-  const [selectedFund, setSelectedFund] = useState<"one" | "seven" | null>(null);
-
+  
   // Mock performance data
   const performanceDataOne = [
     { year: "2016", return: 8.5 },
@@ -69,7 +69,8 @@ export function FundsPage({ language, setCurrentPage }: FundsPageProps) {
             </h2>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-lg border border-border overflow-hidden">
+          {/* Desktop: Table View */}
+          <div className="hidden md:block bg-white rounded-2xl shadow-lg border border-border overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead className="bg-muted">
@@ -118,6 +119,92 @@ export function FundsPage({ language, setCurrentPage }: FundsPageProps) {
                 </tbody>
               </table>
             </div>
+          </div>
+
+          {/* Mobile: Tabs View */}
+          <div className="md:hidden">
+            <Tabs defaultValue="bricksone" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 mb-6">
+                <TabsTrigger value="bricksone" className="data-[state=active]:bg-secondary data-[state=active]:text-white">
+                  {t.comparison.bricksOne}
+                </TabsTrigger>
+                <TabsTrigger value="bricksseven" className="data-[state=active]:bg-primary data-[state=active]:text-white">
+                  {t.comparison.bricksSeven}
+                </TabsTrigger>
+              </TabsList>
+
+              {/* Bricks One Tab Content */}
+              <TabsContent value="bricksone">
+                <div className="bg-gradient-to-br from-secondary/10 to-primary/5 rounded-xl p-6 border border-secondary/30 shadow-lg">
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-start py-3 border-b border-border/50">
+                      <span className="text-foreground/70">{t.comparison.duration}</span>
+                      <span className="text-foreground">{t.comparison.duration1}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3 border-b border-border/50">
+                      <span className="text-foreground/70">{t.comparison.minReturn}</span>
+                      <span className="text-secondary">{t.comparison.minReturn1}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3 border-b border-border/50">
+                      <span className="text-foreground/70">{t.comparison.maxReturn}</span>
+                      <span className="text-secondary">{t.comparison.maxReturn1}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3 border-b border-border/50">
+                      <span className="text-foreground/70">{t.comparison.minInvestment}</span>
+                      <span className="text-foreground">{t.comparison.minInvestment1}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3 border-b border-border/50">
+                      <span className="text-foreground/70">{t.comparison.liquidity}</span>
+                      <span className="text-foreground">{t.comparison.liquidity1}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3 border-b border-border/50">
+                      <span className="text-foreground/70">{t.comparison.risk}</span>
+                      <span className="text-foreground">{t.comparison.risk1}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3">
+                      <span className="text-foreground/70">{t.comparison.idealFor}</span>
+                      <span className="text-foreground text-right max-w-[60%]">{t.comparison.idealFor1}</span>
+                    </div>
+                  </div>
+                </div>
+              </TabsContent>
+
+              {/* Bricks Seven Tab Content */}
+              <TabsContent value="bricksseven">
+                <div className="bg-gradient-to-br from-primary/10 to-secondary/5 rounded-xl p-6 border border-primary/30 shadow-lg">
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-start py-3 border-b border-border/50">
+                      <span className="text-foreground/70">{t.comparison.duration}</span>
+                      <span className="text-foreground">{t.comparison.duration2}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3 border-b border-border/50">
+                      <span className="text-foreground/70">{t.comparison.minReturn}</span>
+                      <span className="text-primary">{t.comparison.minReturn2}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3 border-b border-border/50">
+                      <span className="text-foreground/70">{t.comparison.maxReturn}</span>
+                      <span className="text-primary">{t.comparison.maxReturn2}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3 border-b border-border/50">
+                      <span className="text-foreground/70">{t.comparison.minInvestment}</span>
+                      <span className="text-foreground">{t.comparison.minInvestment2}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3 border-b border-border/50">
+                      <span className="text-foreground/70">{t.comparison.liquidity}</span>
+                      <span className="text-foreground">{t.comparison.liquidity2}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3 border-b border-border/50">
+                      <span className="text-foreground/70">{t.comparison.risk}</span>
+                      <span className="text-foreground">{t.comparison.risk2}</span>
+                    </div>
+                    <div className="flex justify-between items-start py-3">
+                      <span className="text-foreground/70">{t.comparison.idealFor}</span>
+                      <span className="text-foreground text-right max-w-[60%]">{t.comparison.idealFor2}</span>
+                    </div>
+                  </div>
+                </div>
+              </TabsContent>
+            </Tabs>
           </div>
         </div>
       </section>

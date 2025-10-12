@@ -327,8 +327,8 @@ export function HomePage({ language, setCurrentPage }: HomePageProps) {
             </p>
           </div>
 
-          {/* Comparison Table */}
-          <div className="bg-white rounded-2xl shadow-lg border border-border overflow-hidden mb-12">
+          {/* Desktop: Table View */}
+          <div className="hidden md:block bg-white rounded-2xl shadow-lg border border-border overflow-hidden mb-12">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead className="bg-gradient-to-r from-secondary/10 to-primary/10">
@@ -398,6 +398,160 @@ export function HomePage({ language, setCurrentPage }: HomePageProps) {
               </table>
             </div>
             <div className="px-6 py-3 bg-muted/30 space-y-1">
+              <p className="text-sm text-foreground/60 italic">
+                {tComparison.riskNote}
+              </p>
+              <p className="text-sm text-foreground/60 italic">
+                {tComparison.liquidityNote}
+              </p>
+            </div>
+          </div>
+
+          {/* Mobile: Card View */}
+          <div className="md:hidden space-y-4 mb-12">
+            {/* Bricks Capital Card - Highlighted */}
+            <div className="bg-gradient-to-br from-secondary/10 to-primary/5 rounded-xl p-6 border-2 border-secondary/30 shadow-lg">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-3 h-3 bg-secondary rounded-full" />
+                <h3 className="text-lg text-secondary">{tComparison.bricksCapital}</h3>
+              </div>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.annualReturn}:</span>
+                  <span className="text-secondary">{tComparison.bricksReturn}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.risk}:</span>
+                  <span className="text-foreground">{tComparison.bricksRisk}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.liquidity}:</span>
+                  <span className="text-foreground">{tComparison.bricksLiquidity}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.minInvestment}:</span>
+                  <span className="text-foreground">{tComparison.bricksMin}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Bank Deposit Card */}
+            <div className="bg-white rounded-xl p-6 border border-border shadow-sm">
+              <h3 className="text-lg text-foreground mb-4">{tComparison.bankDeposit}</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.annualReturn}:</span>
+                  <span className="text-foreground/60">{tComparison.bankReturn}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.risk}:</span>
+                  <span className="text-foreground/60">{tComparison.bankRisk}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.liquidity}:</span>
+                  <span className="text-foreground/60">{tComparison.bankLiquidity}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.minInvestment}:</span>
+                  <span className="text-foreground/60">{tComparison.bankMin}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Mutual Funds Card */}
+            <div className="bg-white rounded-xl p-6 border border-border shadow-sm">
+              <h3 className="text-lg text-foreground mb-4">{tComparison.mutualFunds}</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.annualReturn}:</span>
+                  <span className="text-foreground/60">{tComparison.mutualReturn}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.risk}:</span>
+                  <span className="text-foreground/60">{tComparison.mutualRisk}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.liquidity}:</span>
+                  <span className="text-foreground/60">{tComparison.mutualLiquidity}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.minInvestment}:</span>
+                  <span className="text-foreground/60">{tComparison.mutualMin}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Stock Market Card */}
+            <div className="bg-white rounded-xl p-6 border border-border shadow-sm">
+              <h3 className="text-lg text-foreground mb-4">{tComparison.stockMarket}</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.annualReturn}:</span>
+                  <span className="text-foreground/60">{tComparison.stockReturn}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.risk}:</span>
+                  <span className="text-foreground/60">{tComparison.stockRisk}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.liquidity}:</span>
+                  <span className="text-foreground/60">{tComparison.stockLiquidity}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.minInvestment}:</span>
+                  <span className="text-foreground/60">{tComparison.stockMin}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Bonds Card */}
+            <div className="bg-white rounded-xl p-6 border border-border shadow-sm">
+              <h3 className="text-lg text-foreground mb-4">{tComparison.bonds}</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.annualReturn}:</span>
+                  <span className="text-foreground/60">{tComparison.bondsReturn}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.risk}:</span>
+                  <span className="text-foreground/60">{tComparison.bondsRisk}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.liquidity}:</span>
+                  <span className="text-foreground/60">{tComparison.bondsLiquidity}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.minInvestment}:</span>
+                  <span className="text-foreground/60">{tComparison.bondsMin}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Direct Real Estate Card */}
+            <div className="bg-white rounded-xl p-6 border border-border shadow-sm">
+              <h3 className="text-lg text-foreground mb-4">{tComparison.directRealEstate}</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.annualReturn}:</span>
+                  <span className="text-foreground/60">{tComparison.directReturn}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.risk}:</span>
+                  <span className="text-foreground/60">{tComparison.directRisk}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.liquidity}:</span>
+                  <span className="text-foreground/60">{tComparison.directLiquidity}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-foreground/70">{tComparison.minInvestment}:</span>
+                  <span className="text-foreground/60">{tComparison.directMin}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Notes */}
+            <div className="bg-muted/30 rounded-xl p-4 space-y-2">
               <p className="text-sm text-foreground/60 italic">
                 {tComparison.riskNote}
               </p>
