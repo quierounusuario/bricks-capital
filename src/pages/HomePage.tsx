@@ -1,7 +1,6 @@
 import { Button } from "../components/ui/button";
-import { TrendingUp, Shield, Award, Users, Building2, Eye, Clock, CheckCircle2, ArrowRight, X, Check } from "lucide-react";
+import { TrendingUp, Shield, Award, Users, Building2, Eye, Clock, CheckCircle2, ArrowRight, Check } from "lucide-react";
 import { Language, translations } from "../translations";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import bricksOneLogo from "figma:asset/14e6c2ae19e5d1a664b2987252626bab494ec868.png";
 import { ROICalculator } from "../components/ROICalculator";
 

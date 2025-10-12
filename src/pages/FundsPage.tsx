@@ -1,5 +1,5 @@
 import { Button } from "../components/ui/button";
-import { Check, TrendingUp, Clock, Shield, Download, ChevronDown, ChevronUp } from "lucide-react";
+import { Check, Download } from "lucide-react";
 import { Language, translations } from "../translations";
 import bricksOneLogo from "figma:asset/14e6c2ae19e5d1a664b2987252626bab494ec868.png";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";

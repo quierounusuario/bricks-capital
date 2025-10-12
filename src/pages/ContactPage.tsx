@@ -13,7 +13,7 @@ import {
 } from "../components/ui/select";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { Language, translations } from "../translations";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 
 interface ContactPageProps {
   language: Language;

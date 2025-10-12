@@ -1,8 +1,6 @@
 import { Button } from "../components/ui/button";
 import {
-  Building2,
   Eye,
-  TrendingUp,
   Award,
   Target,
   Heart,
@@ -12,7 +10,6 @@ import {
   Users,
 } from "lucide-react";
 import { Language, translations } from "../translations";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 interface AboutPageProps {
   language: Language;

@@ -267,6 +267,7 @@ function SidebarTrigger({
       variant="ghost"
       size="icon"
       className={cn("size-7", className)}
+      // @ts-ignore
       onClick={(event) => {
         onClick?.(event);
         toggleSidebar();
