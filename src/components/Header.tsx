@@ -87,6 +87,16 @@ export function Header({ language, setLanguage, currentPage, setCurrentPage }: H
             >
               {t.nav.contact}
             </button>
+            <button
+              onClick={() => navigateTo("portal")}
+              className={`transition-colors ${
+                currentPage === "portal"
+                  ? "text-secondary"
+                  : "text-foreground/80 hover:text-secondary"
+              }`}
+            >
+              {t.nav.portal}
+            </button>
           </nav>
 
           {/* Language Switcher & CTA */}
@@ -162,6 +172,16 @@ export function Header({ language, setLanguage, currentPage, setCurrentPage }: H
                 }`}
               >
                 {t.nav.contact}
+              </button>
+              <button
+                onClick={() => navigateTo("portal")}
+                className={`transition-colors text-left px-4 py-2 ${
+                  currentPage === "portal"
+                    ? "text-secondary"
+                    : "text-foreground/80 hover:text-secondary"
+                }`}
+              >
+                {t.nav.portal}
               </button>
               <div className="flex items-center space-x-4 px-4 pt-4 border-t border-border">
                 <button

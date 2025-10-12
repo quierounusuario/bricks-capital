@@ -5,6 +5,7 @@ import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { FundsPage } from "./pages/FundsPage";
 import { ContactPage } from "./pages/ContactPage";
+import { InvestorPortalPage } from "./pages/InvestorPortalPage";
 import { Language } from "./translations";
 import { Toaster } from "./components/ui/sonner";
 
@@ -22,6 +23,8 @@ export default function App() {
         return <FundsPage language={language} setCurrentPage={setCurrentPage} />;
       case "contact":
         return <ContactPage language={language} setCurrentPage={setCurrentPage} />;
+      case "portal":
+        return <InvestorPortalPage language={language} setCurrentPage={setCurrentPage} />;
       default:
         return <HomePage language={language} setCurrentPage={setCurrentPage} />;
     }
