@@ -14,7 +14,7 @@ import {
   EyeOff,
 } from "lucide-react";
 import { Language, translations } from "../translations";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Line, LineChart } from "recharts";
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Line, LineChart } from "recharts";
 
 interface InvestorPortalPageProps {
   language: Language;
