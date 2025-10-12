@@ -89,7 +89,7 @@ export function HomePage({ language, setCurrentPage }: HomePageProps) {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 lg:py-32 bg-background">
+      <section className="py-10 lg:py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
@@ -155,7 +155,7 @@ export function HomePage({ language, setCurrentPage }: HomePageProps) {
                   <p className="text-foreground/70">{step.desc}</p>
                 </div>
                 {index < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                  <div className="hidden lg:block absolute top-1/2 -right-8 transform -translate-y-1/2 z-10">
                     <ArrowRight className="w-8 h-8 text-secondary/30" />
                   </div>
                 )}
@@ -181,9 +181,8 @@ export function HomePage({ language, setCurrentPage }: HomePageProps) {
             {/* Bricks One Preview */}
             <div className="bg-gradient-to-br from-secondary/10 to-primary/5 rounded-2xl p-8 border border-secondary/20">
               <div className="flex items-center justify-center mb-6">
-                <img src={bricksOneLogo || '/logo-bricksone.png'} alt="Logo" />
               </div>
-              <h3 className="text-2xl text-foreground text-center mb-2">Bricks One</h3>
+              <h3 className="text-3xl text-foreground">Bricks One</h3>
               <p className="text-center text-secondary italic mb-6">
                 {language === "es" 
                   ? "El primer ladrillo de tu futuro financiero"
@@ -229,7 +228,7 @@ export function HomePage({ language, setCurrentPage }: HomePageProps) {
                 </div>
                 <div className="text-center">
                   <p className="text-sm text-foreground/60 mb-1">{language === "es" ? "Mín" : "Min"}</p>
-                  <p className="text-lg text-primary">7%</p>
+                  <p className="text-lg text-primary">6%</p>
                 </div>
                 <div className="text-center">
                   <p className="text-sm text-foreground/60 mb-1">{language === "es" ? "Máx" : "Max"}</p>
@@ -584,7 +583,7 @@ export function HomePage({ language, setCurrentPage }: HomePageProps) {
       </section>
 
       {/* ROI Calculator Section */}
-      <section className="py-20 lg:py-32 bg-muted/30">
+      <section className="py-10 lg:py-16 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ROICalculator language={language} />
         </div>
