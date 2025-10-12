@@ -1,5 +1,5 @@
 import { Language, translations } from "../translations";
-import bricksCapitalLogo from "figma:asset/e4db0af149b479d8460294b402fff3b6a4f60af8.png";
+const bricksCapitalLogo= '';
 
 interface FooterProps {
   language: Language;
@@ -20,7 +20,7 @@ export function Footer({ language, setCurrentPage }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <img src={bricksCapitalLogo} alt="Bricks Capital" className="h-12 w-auto mb-4" />
+            <img src={bricksCapitalLogo || '/logo-placeholder.png'} alt="Logo" />
             <p className="text-secondary mb-2">
               {t.footer.tagline}
             </p>

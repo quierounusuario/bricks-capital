@@ -1,7 +1,7 @@
 import { Button } from "../components/ui/button";
 import { TrendingUp, Shield, Award, Users, Building2, Eye, Clock, CheckCircle2, ArrowRight, Check } from "lucide-react";
 import { Language, translations } from "../translations";
-import bricksOneLogo from "figma:asset/14e6c2ae19e5d1a664b2987252626bab494ec868.png";
+const bricksOneLogo = '';
 import { ROICalculator } from "../components/ROICalculator";
 
 interface HomePageProps {
@@ -181,7 +181,7 @@ export function HomePage({ language, setCurrentPage }: HomePageProps) {
             {/* Bricks One Preview */}
             <div className="bg-gradient-to-br from-secondary/10 to-primary/5 rounded-2xl p-8 border border-secondary/20">
               <div className="flex items-center justify-center mb-6">
-                <img src={bricksOneLogo} alt="Bricks One" className="h-16 w-auto" />
+                <img src={bricksOneLogo || '/logo-bricksone.png'} alt="Logo" />
               </div>
               <h3 className="text-2xl text-foreground text-center mb-2">Bricks One</h3>
               <p className="text-center text-secondary italic mb-6">

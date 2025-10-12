@@ -1,7 +1,7 @@
 import { Button } from "../components/ui/button";
 import { Check, Download } from "lucide-react";
 import { Language, translations } from "../translations";
-import bricksOneLogo from "figma:asset/14e6c2ae19e5d1a664b2987252626bab494ec868.png";
+const bricksOneLogo = '';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import {
   Accordion,
@@ -214,7 +214,7 @@ export function FundsPage({ language, setCurrentPage }: FundsPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
             <div>
               <div className="flex items-center mb-6">
-                <img src={bricksOneLogo} alt="Bricks One" className="h-20 w-auto" />
+                <img src={bricksOneLogo || '/logo-bricksone.png'} alt="Logo" />
               </div>
               <p className="text-secondary italic mb-6 text-xl">
                 "{t.bricksOne.tagline}"

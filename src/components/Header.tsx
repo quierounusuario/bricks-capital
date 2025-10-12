@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Menu, X, Globe } from "lucide-react";
 import { Language, translations } from "../translations";
-import bricksCapitalLogo from "figma:asset/e4db0af149b479d8460294b402fff3b6a4f60af8.png";
+const bricksCapitalLogo = '';
 
 interface HeaderProps {
   language: Language;
@@ -42,7 +42,7 @@ export function Header({ language, setLanguage, currentPage, setCurrentPage }: H
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center cursor-pointer" onClick={() => navigateTo("home")}>
-            <img src={bricksCapitalLogo} alt="Bricks Capital" className="h-12 w-auto" />
+            <img src={bricksCapitalLogo || '/logo-placeholder.png'} alt="Logo" />
           </div>
 
           {/* Desktop Navigation */}

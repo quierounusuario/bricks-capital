@@ -9,7 +9,4 @@ export default defineConfig({
       '@': '/src',
     },
   },
-  define: {
-    'figma:asset/*': '""',  // Engaño: dice "esta imagen es un string vacío"
-  },
 })
