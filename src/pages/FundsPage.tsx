@@ -19,7 +19,82 @@ interface FundsPageProps {
 
 export function FundsPage({ language, setCurrentPage }: FundsPageProps) {
   const t = translations[language].funds;
-  
+  const [selectedFund, setSelectedFund] = useState<"one" | "seven" | null>(null);
+
+  // Function to generate and download a blank PDF with title
+  const downloadBlankPDF = (title: string) => {
+    // Create a simple PDF-like content (actually a text file formatted as PDF header)
+    const pdfContent = `%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/Resources <<
+/Font <<
+/F1 <<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+>>
+>>
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 44
+>>
+stream
+BT
+/F1 24 Tf
+50 700 Td
+(${title}) Tj
+ET
+endstream
+endobj
+xref
+0 5
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000317 00000 n 
+trailer
+<<
+/Size 5
+/Root 1 0 R
+>>
+startxref
+410
+%%EOF`;
+
+    // Create blob and download
+    const blob = new Blob([pdfContent], { type: 'application/pdf' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${title.replace(/\s+/g, '_')}.pdf`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+  };
+
   // Mock performance data
   const performanceDataOne = [
     { year: "2016", return: 8.5 },
@@ -213,9 +288,7 @@ export function FundsPage({ language, setCurrentPage }: FundsPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
             <div>
-              <div className="flex items-center mb-6">
-                <img src={bricksOneLogo || '/logo-bricksone.png'} alt="Logo" />
-              </div>
+              <h2 className="text-4xl text-foreground mb-4">{t.bricksOne.name}</h2>
               <p className="text-secondary italic mb-6 text-xl">
                 "{t.bricksOne.tagline}"
               </p>
@@ -347,6 +420,7 @@ export function FundsPage({ language, setCurrentPage }: FundsPageProps) {
                 ].map((doc, index) => (
                   <button
                     key={index}
+                    onClick={() => downloadBlankPDF(doc)}
                     className="w-full flex items-center justify-between p-3 rounded-lg border border-border hover:bg-muted transition-colors"
                   >
                     <span className="text-foreground/80">{doc}</span>
@@ -506,6 +580,7 @@ export function FundsPage({ language, setCurrentPage }: FundsPageProps) {
                 ].map((doc, index) => (
                   <button
                     key={index}
+                    onClick={() => downloadBlankPDF(`${doc} - Bricks Seven`)}
                     className="w-full flex items-center justify-between p-3 rounded-lg border border-border hover:bg-muted transition-colors"
                   >
                     <span className="text-foreground/80">{doc}</span>
@@ -544,8 +619,7 @@ export function FundsPage({ language, setCurrentPage }: FundsPageProps) {
               { q: t.faq.q3, a: t.faq.a3 },
               { q: t.faq.q4, a: t.faq.a4 },
               { q: t.faq.q5, a: t.faq.a5 },
-              { q: t.faq.q6, a: t.faq.a6 },
-            ].map((faq, index) => (
+              ].map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
