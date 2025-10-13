@@ -82,10 +82,10 @@ export function Footer({ language, setCurrentPage }: FooterProps) {
               </li>
               <li>
                 <a
-                  href="tel:+34900123456"
+                  href="tel:"+34 123456789""
                   className="text-foreground/70 hover:text-secondary transition-colors"
                 >
-                  +34 900 123 456
+                  "+34 123 456 789"
                 </a>
               </li>
             </ul>

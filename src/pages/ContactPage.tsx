@@ -283,10 +283,12 @@ export function ContactPage({ language, setCurrentPage }: ContactPageProps) {
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Phone className="w-5 h-5 text-secondary" />
+                          <MessageCircle className="w-5 h-5 text-secondary" />
                         </div>
                         <a
-                          href={`tel:${t.direct.investorsPhone}`}
+                          href={`https://wa.me/${t.direct.investorsPhone.replace(/\s+/g, '')}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-foreground hover:text-secondary transition-colors"
                         >
                           {t.direct.investorsPhone}
