@@ -4,17 +4,15 @@ import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Card } from "../components/ui/card";
 import {
-  TrendingUp,
   Download,
   LogOut,
   Mail,
   Phone,
-  Clock,
   Eye,
   EyeOff,
 } from "lucide-react";
 import { Language, translations } from "../translations";
-import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Line, LineChart } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Line, LineChart } from "recharts";
 
 interface InvestorPortalPageProps {
   language: Language;
