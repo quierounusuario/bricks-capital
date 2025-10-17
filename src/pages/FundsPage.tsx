@@ -1,7 +1,6 @@
 import { Button } from "../components/ui/button";
 import { Check, Download } from "lucide-react";
 import { Language, translations } from "../translations";
-const bricksOneLogo = '';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import {
   Accordion,
@@ -19,7 +18,6 @@ interface FundsPageProps {
 
 export function FundsPage({ language, setCurrentPage }: FundsPageProps) {
   const t = translations[language].funds;
-  const [selectedFund, setSelectedFund] = useState<"one" | "seven" | null>(null);
 
   // Function to generate and download a blank PDF with title
   const downloadBlankPDF = (title: string) => {

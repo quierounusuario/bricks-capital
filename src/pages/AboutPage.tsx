@@ -6,7 +6,6 @@ import {
   Heart,
   Lightbulb,
   ShieldCheck,
-  CheckCircle2,
   Users,
 } from "lucide-react";
 import { Language, translations } from "../translations";
@@ -216,61 +215,6 @@ export function AboutPage({ language, setCurrentPage }: AboutPageProps) {
                 <p className="text-foreground/70">{step.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-     {/* Expert Endorsements Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-secondary/10 to-primary/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
-              {t.expertEndorsements.title}
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
-            {/* Expert 1 */}
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-border">
-              <div className="mb-6">
-                <svg className="w-10 h-10 text-secondary/20" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-              </div>
-              <p className="text-foreground/80 mb-6 italic leading-relaxed">
-                "{t.expertEndorsements.expert1Quote}"
-              </p>
-              <div className="border-t border-border pt-4">
-                <p className="text-foreground">{t.expertEndorsements.expert1Name}</p>
-                <p className="text-sm text-secondary">{t.expertEndorsements.expert1Role}</p>
-              </div>
-            </div>
-
-            {/* Expert 2 */}
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-border">
-              <div className="mb-6">
-                <svg className="w-10 h-10 text-secondary/20" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-              </div>
-              <p className="text-foreground/80 mb-6 italic leading-relaxed">
-                "{t.expertEndorsements.expert2Quote}"
-              </p>
-              <div className="border-t border-border pt-4">
-                <p className="text-foreground">{t.expertEndorsements.expert2Name}</p>
-                <p className="text-sm text-secondary">{t.expertEndorsements.expert2Role}</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <Button
-              size="lg"
-              className="bg-secondary hover:bg-secondary/90"
-              onClick={() => setCurrentPage("contact")}
-            >
-              {language === "es" ? "Comienza a invertir" : "Start investing"}
-            </Button>
           </div>
         </div>
       </section>

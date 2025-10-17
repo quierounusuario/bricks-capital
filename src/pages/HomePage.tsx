@@ -1,7 +1,6 @@
 import { Button } from "../components/ui/button";
 import { TrendingUp, Shield, Award, Users, Building2, Eye, Clock, CheckCircle2, ArrowRight, Check } from "lucide-react";
 import { Language, translations } from "../translations";
-const bricksOneLogo = '';
 import { ROICalculator } from "../components/ROICalculator";
 
 interface HomePageProps {
