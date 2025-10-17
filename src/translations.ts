@@ -171,7 +171,7 @@ export const translations = {
         year2Title: "Lanzamiento BricksOne",
         year2Desc: "Lanzamos nuestro primer fondo REIT con una cartera inicial de 1M€ en activos premium.",
         year3: "2019",
-        year3Title: "Expansión Geográfica"
+        year3Title: "Expansión Geográfica",
         year3Desc: "Expandimos operaciones a diferentes estados, diversificando geográficamente la cartera.",
         year4: "2021",
         year4Title: "BricksSeven",
@@ -197,7 +197,7 @@ export const translations = {
         member3Bio: "10+ años analizando mercados inmobiliarios. Especialista en REIT. Ex-Colliers Real Estate.",
         member4Name: "Laura Fernández",
         member4Role: "Head of Operations",
-        member4Bio: ""5+ años optimizando operaciones de fondos. Ingeniera Industrial, MBA. Ex-Santander Asset Management.",
+        member4Bio: "5+ años optimizando operaciones de fondos. Ingeniera Industrial, MBA. Ex-Santander Asset Management.",
       },
       approach: {
         title: "Nuestro Enfoque de Inversión",
@@ -712,7 +712,7 @@ export const translations = {
         year2Title: "BricksOne Launch",
         year2Desc: "We launch our first REIT fund with an initial portfolio of 1M€ in premium assets.",
         year3: "2019",
-        year3Title: Geographical Expansion",
+        year3Title: "Geographical Expansion",
         year3Desc: "We expand operations to Mexico and Colombia, geographically diversifying the portfolio.",
         year4: "2021",
         year4Title: "BricksSeven",
