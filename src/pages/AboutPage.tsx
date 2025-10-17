@@ -1,4 +1,3 @@
-import { Button } from "../components/ui/button";
 import {
   Eye,
   Award,
@@ -12,10 +11,9 @@ import { Language, translations } from "../translations";
 
 interface AboutPageProps {
   language: Language;
-  setCurrentPage: (page: string) => void;
 }
 
-export function AboutPage({ language, setCurrentPage }: AboutPageProps) {
+export function AboutPage({ language }: AboutPageProps) {
   const t = translations[language].about;
 
   return (
